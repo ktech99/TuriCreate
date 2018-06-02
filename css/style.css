@@ -2,17 +2,17 @@ body {
   font-family: "Source Sans Pro";
   margin: 0;
   color: #222;
-  font-weight: 200;
+  font-weight: 300;
 }
 a {
   color: #ffa07a;
 }
 p,
 blockquote {
-  line-height: 1.6em;
+  line-height: 1.5em;
 }
 p {
-  margin: 0 0 2em;
+  margin: 2 0 2em;
 }
 blockquote {
   border-left: 1px solid #ddd;
