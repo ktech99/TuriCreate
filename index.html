@@ -48,7 +48,7 @@
               </div>
             </header>
             <div class="content">
-              <p>For this project, we would be needing:<br>1. A computer running mac OS.<br>2. Basic understanding of Python or any programming language<br>3. Any version of python >= 2.7.14 which can be found <a href = "https://www.python.org/downloads/">here</a><br>4. A version of Xcode version >= enter number<br>5. An installation of PIP.<br> PIP is a tool for managing and installing python packages. It can be installed by opening the terminal and typing:</p>
+              <p>For this project, we would be needing:<br>1. A computer running mac OS.<br>2. Basic understanding of Python or any programming language<br>3. Any version of python >= 2.7.14 which can be found <a href = "https://www.python.org/downloads/">here</a><br>4. A version of Xcode version >= 9.0<br>5. An installation of PIP.<br> PIP is a tool for managing and installing python packages. It can be installed by opening the terminal and typing:</p>
               <blockquote>sudo easy_install pip</blockquote>
               <p>Lets go ahead and install TuriCreate by typing the following command in your terminal:</p>
               <blockquote>pip install turicreate</blockquote>
@@ -76,57 +76,61 @@
               <header>
                 <div class="stick">
                   <h2>Let's get training</h2>
-                  </div>
-                </header>
-                <div class="content">
-                  <p>Open a new command line and enter into it:</p>
-                  <blockquote>cd Desktop</blockquote>
-                  <blockquote>python</blockquote>
-                  <p>the first line changes the directory to the desktop so that your file will be saved here.</p>
-                  <p>The second line allows you to write python code in the command line itself.</p>
-                  <p>In your command line, enter the code lines of code one by one (lines not beginning with a #), and to understand what the code does, read the comments (Lines beggining with #)</p>
-                  <h1>Just give me the code already!</h1>
-                  <p>Okay here you go.</p>
-                  <script src="https://gist.github.com/ktech99/82f5418c3c5e57fa1b0c2fc072f96427.js"></script>
-                  <p>You can ignore those errors you get importing images, some images can be corrupted or of wrong format.</p>
-                  <p>Here is some output to guide you:</p>
-                  <blockquote>Line 17:<br>
+                </div>
+              </header>
+              <div class="content">
+                <p>Open a new command line and enter into it:</p>
+                <blockquote>cd Desktop</blockquote>
+                <blockquote>python</blockquote>
+                <p>the first line changes the directory to the desktop so that your file will be saved here.</p>
+                <p>The second line allows you to write python code in the command line itself.</p>
+                <p>In your command line, enter the code lines of code one by one (lines not beginning with a #), and to understand what the code does, read the comments (Lines beggining with #)</p>
+                <h1>Just give me the code already!</h1>
+                <p>Okay here you go.</p>
+                <script src="https://gist.github.com/ktech99/82f5418c3c5e57fa1b0c2fc072f96427.js"></script>
+                <p>You can ignore those errors you get importing images, some images can be corrupted or of wrong format.</p>
+                <p>Here is some output to guide you:</p>
+                <blockquote>Line 17:<br>
                   <img src = "images/line 17.png" height="50%" ></img></blockquote>
                   <blockquote>Line 24-31:<br>
-                  <img src = "images/line 24-31.png"></img></blockquote>
-                  <blockquote>Line 34:<br>
-                  <img src = "images/line 34.png"></blockquote>
-                  <p>Great! You have just trained your first machine learning model that can be used in IOS apps. After you have understood what this code does, you can just copy and paste the whole thing at once if you have to reuse it in the future.</p>
-                </div>
-              </article>
-              <article>
-                <header>
-                  <div class="stick">
-                    <h2>To the app!</h2>
+                    <img src = "images/line 24-31.png"></img></blockquote>
+                    <blockquote>Line 34:<br>
+                      <img src = "images/line 34.png"></blockquote>
+                      <p>Great! You have just trained your first machine learning model that can be used in IOS apps. After you have understood what this code does, you can just copy and paste the whole thing at once if you have to reuse it in the future.</p>
                     </div>
-                  </header>
-                  <div class="content">
-                    <p>For testing purposes, we will use the demo app provided by Apple.This demo app can be downloaded <a href = "https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml">here</a>.</p>
-                    <p>unzip the project, and copy the catDog.ml model that we just created into the folder:</p>
-                    <blockquote>vision +ML Example/Model</blockquote>
-                    <p>Now open up the file ending with .xcodeproj</p>
-                    <p>We now have to add our catDog.ml model to the build phases as shown below</p>
-                    <img src = "images/compile.png" style="height:250px"></img>
-                    <p>Now navigate to ImageClassificationViewController.swift<br></p>
-                  </div>
-                </article>
-              </section>
-            </div>
-            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-            <script src='http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js'></script>
+                  </article>
+                  <article>
+                    <header>
+                      <div class="stick">
+                        <h2>To the app!</h2>
+                      </div>
+                    </header>
+                    <div class="content">
+                      <p>For testing purposes, we will use the demo app provided by Apple.This demo app can be downloaded <a href = "https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml">here</a>.</p>
+                      <p>unzip the project, and copy the catDog.ml model that we just created into the folder:</p>
+                      <blockquote>vision +ML Example/Model</blockquote>
+                      <p>Now open up the file ending with .xcodeproj</p>
+                      <p>We now have to add our catDog.ml model to the build phases as shown below</p>
+                      <img src = "images/compile.png" style="height:250px"></img>
+                      <p>Now navigate to ImageClassificationViewController.swift<br> and change line number 30 to:</p>
+                      <blockquote>let model = try VNCoreMLModel(for: catDog().model)
+                      </blockquote>
+                      <p>Run the app on your device, and it should be working.</p>
+                      <p>Congrats on making your first machine-learning IOS app!</p>
+                    </div>
+                  </article>
+                </section>
+              </div>
+              <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+              <script src='http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js'></script>
 
 
 
-            <script  src="js/index.js"></script>
+              <script  src="js/index.js"></script>
 
 
 
 
-          </body>
+            </body>
 
-          </html>
+            </html>
